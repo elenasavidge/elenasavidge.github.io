@@ -1,4 +1,6 @@
 <?php
+$thankYouMessage = "";
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST["name"];
     $email = $_POST["email"];
@@ -10,8 +12,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     mail($to, $subject, $message, $headers);
     
-    // Redirect user after submission
-    header("Location: thank-you.html"); // Replace with your thank-you page URL
-    exit();
+    $thankYouMessage = "Thank you for your message!";
 }
 ?>
